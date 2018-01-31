@@ -1,9 +1,18 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const nunjucks = require('nunjucks')
+
+// https://mozilla.github.io/nunjucks/
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+})
+
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('FOI')
+  res.render('index.html')
 })
 
 app.listen(process.env.PORT, () => {

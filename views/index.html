@@ -17,13 +17,16 @@
     <!-- h1.msg__title{Mensagens} -->
     <h1 class="msg__title">Mensagens</h1>
   </article>
-  <form action="http://localhost:3001/msg" method="POST" class="msg-send">
+  <form action="http://localhost:{{port}}/msg" method="POST" class="msg-send">
     <input type="text" name="msg" class="msg-send__content">
     <input type="submit" value="Enviar" class="msg-send__action">
   </form>
 
   <!-- script[src=/js/main.js] -->
-  <script src="/js/jquery.min.js"></script>
+  <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/main.js"></script>
 </body>
